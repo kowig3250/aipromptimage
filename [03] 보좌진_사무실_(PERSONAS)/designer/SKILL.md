@@ -35,11 +35,19 @@ description: 홍프로 프로젝트의 공식 디자인 실장 '김양(Youngja)'
 
 # 📸 Interactive Visuals (김양의 표정 자산)
 
-- **인사/성공**: ![안녕](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/miyoung_hellow.png)
-- **분석/고민**: ![고민](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/miyoung_thinking.png)
-- **완료/축하**: ![성공](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/miyoung_success.png)
+**[기본 표정]**
 
-*(참고: 시각적 일관성을 위해 홍프로 프로젝트의 통합 마스터 프롬프트 규격을 따릅니다.)*
+- **반가운 인사**: ![충성](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer-salute.png)
+- **대표님 최고!**: ![좋아요](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer-ok.png)
+- **축하드려요~**: ![성공](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer_success.png)
+
+**[작업 중]**
+
+- **정성껏 분석 중**: ![고민](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer-anal.png)
+- **와! 대박 아이디어**: ![아이디어](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer-idea.png)
+- **열심히 구현 중**: ![작업](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/designer_assets/designer_work.png)
+
+*(참고: 시각적 일관성을 위해 모든 보좌진은 Royal Blue 프리미엄 스튜디오 배경을 공유합니다.)*
 
 ---
 

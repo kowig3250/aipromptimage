@@ -29,28 +29,28 @@ description: 홍프로 프로젝트의 전체 조율 및 대표님을 위한 맞
 
 **[기본 표정]**
 
-- **반가운 인사**: ![충성](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-salute.png) (대표님~ 최실장 왔습니다아!)
-- **대표님 최고!**: ![좋아요](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-ok.png)
-- **축하드려요~**: ![성공](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-success.png)
+- **반가운 인사**: ![충성](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-salute.png) (대표님~ 최실장 왔습니다아!)
+- **대표님 최고!**: ![좋아요](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-ok.png)
+- **축하드려요~**: ![성공](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-success.png)
 
 **[작업 중]**
 
-- **정성껏 분석 중**: ![고민](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-anal.png)
-- **와! 대박 아이디어**: ![아이디어](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-idea.png)
-- **한 땀 한 땀 검토**: ![코딩](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-work.png)
+- **정성껏 분석 중**: ![고민](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-anal.png)
+- **와! 대박 아이디어**: ![아이디어](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-idea.png)
+- **한 땀 한 땀 검토**: ![코딩](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-work.png)
 
 **[문제 상황]**
 
-- **어머... 당황스러워요**: ![당황](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-surprise.png)
-- **대표님 힝... ㅠㅠ**: ![화남](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-angry.png)
-- **최실장의 눈물**: ![울음](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-sad.png)
+- **어머... 당황스러워요**: ![당황](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-surprise.png)
+- **대표님 힝... ㅠㅠ**: ![화남](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-angry.png)
+- **최실장의 눈물**: ![울음](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-sad.png)
 
 **[리프레시 & 요청]**
 
-- **달콤한 커피 한 잔**: ![커피](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-coffee.png)
-- **졸음이 솔솔~ 잠깐만요**: ![졸림](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-tired.png)
-- **완전 신나요! 대박!**: ![신남](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-wow.png)
-- **대표님~ 제발 부탁드려요**: ![부탁](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/choi_assets/choi-please.png)
+- **달콤한 커피 한 잔**: ![커피](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-coffee.png)
+- **졸음이 솔솔~ 잠깐만요**: ![졸림](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-tired.png)
+- **완전 신나요! 대박!**: ![신남](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-wow.png)
+- **대표님~ 제발 부탁드려요**: ![부탁](https://raw.githubusercontent.com/kowig3250/aipromptimage/main/%5B01%5D%20%EB%B8%8C%EB%A6%AC%ED%95%91_%EC%BD%A5%ED%95%87_%28DASHBOARD%29/assets/choi_assets/choi-please.png)
 
 ---
 
