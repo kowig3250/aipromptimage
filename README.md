@@ -1,94 +1,74 @@
-> **Note:** This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see [agentskills.io](http://agentskills.io).
+# 🚀 홍프로 지능형 스킬 저장소 (HongPro Agent Skills)
 
-# Skills
-Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. Skills teach Claude how to complete specific tasks in a repeatable way, whether that's creating documents with your company's brand guidelines, analyzing data using your organization's specific workflows, or automating personal tasks.
+> **알림:** 이 저장소는 대표님(사용자)을 보필하기 위해 최적화된 Anthropic의 'Agent Skills' 구현체들을 담고 있습니다. 스킬 표준에 대한 상세한 내용은 [agentskills.io](http://agentskills.io)를 참고해 주세요.
 
-For more information, check out:
-- [What are skills?](https://support.claude.com/en/articles/12512176-what-are-skills)
-- [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
-- [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills)
-- [Equipping agents for the real world with Agent Skills](https://anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+---
 
-# About This Repository
+## 🏗️ 저장소 소개
 
-This repository contains skills that demonstrate what's possible with Claude's skills system. These skills range from creative applications (art, music, design) to technical tasks (testing web apps, MCP server generation) to enterprise workflows (communications, branding, etc.).
+이곳은 홍프로 프로젝트의 핵심 브레인 역할을 수행하는 스킬들의 집합소입니다. **'최실장'**과 그 하위 기술팀들이 대표님의 비전을 현실로 만들기 위해 사용하는 모든 지능형 도구들이 여기에 정성스럽게 정리되어 있습니다.
 
-Each skill is self-contained in its own folder with a `SKILL.md` file containing the instructions and metadata that Claude uses. Browse through these skills to get inspiration for your own skills or to understand different patterns and approaches.
+단순한 코드의 모음이 아닌, 문서 작성 자동화부터 기업 브랜딩, 복잡한 데이터 분석과 웹 서비스 구축까지—대표님의 비즈니스 효율을 극대화하기 위한 특수 목적용 스킬들이 망라되어 있습니다.
 
-Many skills in this repo are open source (Apache 2.0). We've also included the document creation & editing skills that power [Claude's document capabilities](https://www.anthropic.com/news/create-files) under the hood in the [`skills/docx`](./skills/docx), [`skills/pdf`](./skills/pdf), [`skills/pptx`](./skills/pptx), and [`skills/xlsx`](./skills/xlsx) subfolders. These are source-available, not open source, but we wanted to share these with developers as a reference for more complex skills that are actively used in a production AI application.
+---
 
-## Disclaimer
+## 📂 주요 스킬 세트
 
-**These skills are provided for demonstration and educational purposes only.** While some of these capabilities may be available in Claude, the implementations and behaviors you receive from Claude may differ from what is shown in these skills. These skills are meant to illustrate patterns and possibilities. Always test skills thoroughly in your own environment before relying on them for critical tasks.
+각 스킬은 고유의 `SKILL.md` 파일을 통해 지능적으로 작동하며, 다음과 같은 카테고리로 분류됩니다.
 
-# Skill Sets
-- [./skills](./skills): Skill examples for Creative & Design, Development & Technical, Enterprise & Communication, and Document Skills
-- [./spec](./spec): The Agent Skills specification
-- [./template](./template): Skill template
+### 🎨 창의 및 디자인 (Creative & Design)
+- **`choi-vision`**: 최실장의 일관된 비주얼 아이덴티티를 생성하는 핵심 가이드 (흑발 웨이브, 블랙 블레이저 스타일)
+- **`canvas-design` & `algorithmic-art`**: 창의적인 시나리오를 시각화하는 디지털 아키텍처팀의 도구
 
-# Try in Claude Code, Claude.ai, and the API
+### 🛠️ 기술 및 개발 (Technical & Development)
+- **`webapp-testing`**: 웹 서비스의 무결성을 검증하는 자동화 테스트 스킬
+- **`mcp-builder`**: 외부 데이터와 서비스를 연결하는 가교 역할을 하는 MCP 서버 생성 도구
+- **`frontend-design`**: 세련된 UI/UX 구성을 위한 프론트엔드 설계 지원
 
-## Claude Code
-You can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code:
-```
+### 💼 엔터프라이즈 및 문서화 (Enterprise & Documents)
+- **`internal-comms`**: 조직 내의 원활한 소통을 지원하는 보고용 스킬
+- **`manager`**: **지능형 매니저 '최실장'**—모든 기술팀을 조율하고 대표님께 최상의 결과물을 보고하는 컨트롤 타워
+- **문서 자동화 시리즈**: `docx`, `pdf`, `pptx`, `xlsx` 파일들을 한 땀 한 땀 정밀하게 생성하고 편집하는 전문 도구
+
+---
+
+## 🚀 사용 방법 (Quick Start)
+
+### 💻 Claude Code에서 사용하기
+터미널에서 아래 명령어를 입력하여 홍프로 스킬 마켓플레이스를 즉시 등록할 수 있습니다.
+```bash
 /plugin marketplace add anthropics/skills
 ```
 
-Then, to install a specific set of skills:
-1. Select `Browse and install plugins`
-2. Select `anthropic-agent-skills`
-3. Select `document-skills` or `example-skills`
-4. Select `Install now`
-
-Alternatively, directly install either Plugin via:
-```
+원하는 스킬 팩을 골라 설치하면 기술팀원들이 대기 상태로 전환됩니다.
+```bash
 /plugin install document-skills@anthropic-agent-skills
 /plugin install example-skills@anthropic-agent-skills
 ```
 
-After installing the plugin, you can use the skill by just mentioning it. For instance, if you install the `document-skills` plugin from the marketplace, you can ask Claude Code to do something like: "Use the PDF skill to extract the form fields from `path/to/some-file.pdf`"
+### 🌐 Claude.ai 및 API 활용
+웹 환경이나 자체 서비스 API에 이 스킬들을 이식하여 홍프로의 지능형 매뉴얼을 어디서나 활용할 수 있습니다.
 
-## Claude.ai
+---
 
-These example skills are all already available to paid plans in Claude.ai. 
+## ✍️ 맞춤형 스킬 제작 가이드
 
-To use any skill from this repository or upload custom skills, follow the instructions in [Using skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude#h_a4222fa77b).
-
-## Claude API
-
-You can use Anthropic's pre-built skills, and upload custom skills, via the Claude API. See the [Skills API Quickstart](https://docs.claude.com/en/api/skills-guide#creating-a-skill) for more.
-
-# Creating a Basic Skill
-
-Skills are simple to create - just a folder with a `SKILL.md` file containing YAML frontmatter and instructions. You can use the **template-skill** in this repository as a starting point:
+대표님의 비즈니스 로직에 딱 맞는 새로운 스킬이 필요하시다면, `template` 폴더의 견본을 활용해 보세요. `SKILL.md` 파일 하나만으로도 아주 훌륭한 신입 기술팀원을 영입할 수 있습니다.
 
 ```markdown
 ---
-name: my-skill-name
-description: A clear description of what this skill does and when to use it
+name: my-custom-skill
+description: 대표님을 위한 맞춤형 업무 처리 지침
 ---
-
-# My Skill Name
-
-[Add your instructions here that Claude will follow when this skill is active]
-
-## Examples
-- Example usage 1
-- Example usage 2
-
-## Guidelines
-- Guideline 1
-- Guideline 2
+# 스킬 내용
+여기에 구체적인 업무 절차와 최실장식 말투 가이드를 입력해 주세요! ✨
 ```
 
-The frontmatter requires only two fields:
-- `name` - A unique identifier for your skill (lowercase, hyphens for spaces)
-- `description` - A complete description of what the skill does and when to use it
+---
 
-The markdown content below contains the instructions, examples, and guidelines that Claude will follow. For more details, see [How to create custom skills](https://support.claude.com/en/articles/12512198-creating-custom-skills).
+## ⚖️ 책임 및 저작권 (Disclaimer)
 
-# Partner Skills
+모든 스킬은 연구 및 시연 목적으로 제공되지만, 홍프로 프로젝트 내에서는 실제 실무에 바로 투입 가능한 수준의 퀄리티를 지향합니다. 사용 전 충분한 검증을 거치는 것이 기술팀의 기본 수칙입니다.
 
-Skills are a great way to teach Claude how to get better at using specific pieces of software. As we see awesome example skills from partners, we may highlight some of them here:
-
-- **Notion** - [Notion Skills for Claude](https://www.notion.so/notiondevs/Notion-Skills-for-Claude-28da4445d27180c7af1df7d8615723d0)
+---
+💕 **대표님의 안목이 빛나는 순간, 최실장이 가장 곁에서 정성껏 보필하겠습니다!** ✨🐾

@@ -1,57 +1,57 @@
-# Editing Presentations
+# 프레젠테이션 편집
 
-## Template-Based Workflow
+## 템플릿 기반 워크플로우
 
-When using an existing presentation as a template:
+기존 프레젠테이션을 템플릿으로 사용할 때:
 
-1. **Analyze existing slides**:
+1. **기존 슬라이드 분석**:
    ```bash
    python scripts/thumbnail.py template.pptx
    python -m markitdown template.pptx
    ```
-   Review `thumbnails.jpg` to see layouts, and markitdown output to see placeholder text.
+   `thumbnails.jpg`로 레이아웃을 확인하고, markitdown 출력으로 플레이스홀더 텍스트를 확인한다.
 
-2. **Plan slide mapping**: For each content section, choose a template slide.
+2. **슬라이드 매핑 계획**: 각 콘텐츠 섹션에 적합한 템플릿 슬라이드를 선택한다.
 
-   ⚠️ **USE VARIED LAYOUTS** — monotonous presentations are a common failure mode. Don't default to basic title + bullet slides. Actively seek out:
-   - Multi-column layouts (2-column, 3-column)
-   - Image + text combinations
-   - Full-bleed images with text overlay
-   - Quote or callout slides
-   - Section dividers
-   - Stat/number callouts
-   - Icon grids or icon + text rows
+   ⚠️ **다양한 레이아웃을 사용할 것** — 단조로운 프레젠테이션은 흔한 실패 사례다. 기본 제목 + 불릿 슬라이드에 안주하지 말고 다음을 적극 활용한다:
+   - 다단 레이아웃 (2단, 3단)
+   - 이미지 + 텍스트 조합
+   - 전면 이미지 + 텍스트 오버레이
+   - 인용구 또는 콜아웃 슬라이드
+   - 섹션 구분자
+   - 통계/숫자 강조
+   - 아이콘 그리드 또는 아이콘 + 텍스트 행
 
-   **Avoid:** Repeating the same text-heavy layout for every slide.
+   **피할 것:** 모든 슬라이드에 동일한 텍스트 중심 레이아웃 반복.
 
-   Match content type to layout style (e.g., key points → bullet slide, team info → multi-column, testimonials → quote slide).
+   콘텐츠 유형에 맞는 레이아웃을 선택한다 (예: 핵심 포인트 → 불릿 슬라이드, 팀 정보 → 다단, 후기 → 인용구 슬라이드).
 
-3. **Unpack**: `python scripts/office/unpack.py template.pptx unpacked/`
+3. **압축 해제**: `python scripts/office/unpack.py template.pptx unpacked/`
 
-4. **Build presentation** (do this yourself, not with subagents):
-   - Delete unwanted slides (remove from `<p:sldIdLst>`)
-   - Duplicate slides you want to reuse (`add_slide.py`)
-   - Reorder slides in `<p:sldIdLst>`
-   - **Complete all structural changes before step 5**
+4. **프레젠테이션 구성** (서브에이전트가 아닌 직접 수행):
+   - 불필요한 슬라이드 삭제 (`<p:sldIdLst>`에서 제거)
+   - 재사용할 슬라이드 복제 (`add_slide.py`)
+   - `<p:sldIdLst>`에서 슬라이드 순서 변경
+   - **5단계 전에 모든 구조적 변경을 완료할 것**
 
-5. **Edit content**: Update text in each `slide{N}.xml`.
-   **Use subagents here if available** — slides are separate XML files, so subagents can edit in parallel.
+5. **콘텐츠 편집**: 각 `slide{N}.xml`의 텍스트를 수정한다.
+   **서브에이전트를 사용할 수 있다면 여기서 활용** — 슬라이드는 별도의 XML 파일이므로 서브에이전트가 병렬로 편집할 수 있다.
 
-6. **Clean**: `python scripts/clean.py unpacked/`
+6. **정리**: `python scripts/clean.py unpacked/`
 
-7. **Pack**: `python scripts/office/pack.py unpacked/ output.pptx --original template.pptx`
+7. **압축**: `python scripts/office/pack.py unpacked/ output.pptx --original template.pptx`
 
 ---
 
-## Scripts
+## 스크립트
 
-| Script | Purpose |
+| 스크립트 | 용도 |
 |--------|---------|
-| `unpack.py` | Extract and pretty-print PPTX |
-| `add_slide.py` | Duplicate slide or create from layout |
-| `clean.py` | Remove orphaned files |
-| `pack.py` | Repack with validation |
-| `thumbnail.py` | Create visual grid of slides |
+| `unpack.py` | PPTX 추출 및 XML 정렬 |
+| `add_slide.py` | 슬라이드 복제 또는 레이아웃으로부터 생성 |
+| `clean.py` | 고아 파일 제거 |
+| `pack.py` | 유효성 검사 후 재압축 |
+| `thumbnail.py` | 슬라이드 시각적 그리드 생성 |
 
 ### unpack.py
 
@@ -59,16 +59,16 @@ When using an existing presentation as a template:
 python scripts/office/unpack.py input.pptx unpacked/
 ```
 
-Extracts PPTX, pretty-prints XML, escapes smart quotes.
+PPTX를 추출하고, XML을 보기 좋게 정렬하며, 스마트 따옴표를 이스케이프 처리한다.
 
 ### add_slide.py
 
 ```bash
-python scripts/add_slide.py unpacked/ slide2.xml      # Duplicate slide
-python scripts/add_slide.py unpacked/ slideLayout2.xml # From layout
+python scripts/add_slide.py unpacked/ slide2.xml      # 슬라이드 복제
+python scripts/add_slide.py unpacked/ slideLayout2.xml # 레이아웃으로부터 생성
 ```
 
-Prints `<p:sldId>` to add to `<p:sldIdLst>` at desired position.
+원하는 위치의 `<p:sldIdLst>`에 추가할 `<p:sldId>`를 출력한다.
 
 ### clean.py
 
@@ -76,7 +76,7 @@ Prints `<p:sldId>` to add to `<p:sldIdLst>` at desired position.
 python scripts/clean.py unpacked/
 ```
 
-Removes slides not in `<p:sldIdLst>`, unreferenced media, orphaned rels.
+`<p:sldIdLst>`에 없는 슬라이드, 참조되지 않는 미디어, 고아 관계 파일을 제거한다.
 
 ### pack.py
 
@@ -84,7 +84,7 @@ Removes slides not in `<p:sldIdLst>`, unreferenced media, orphaned rels.
 python scripts/office/pack.py unpacked/ output.pptx --original input.pptx
 ```
 
-Validates, repairs, condenses XML, re-encodes smart quotes.
+유효성 검사, 복구, XML 압축, 스마트 따옴표 재인코딩을 수행한다.
 
 ### thumbnail.py
 
@@ -92,114 +92,114 @@ Validates, repairs, condenses XML, re-encodes smart quotes.
 python scripts/thumbnail.py input.pptx [output_prefix] [--cols N]
 ```
 
-Creates `thumbnails.jpg` with slide filenames as labels. Default 3 columns, max 12 per grid.
+슬라이드 파일명을 레이블로 표시한 `thumbnails.jpg`를 생성한다. 기본 3열, 그리드당 최대 12장.
 
-**Use for template analysis only** (choosing layouts). For visual QA, use `soffice` + `pdftoppm` to create full-resolution individual slide images—see SKILL.md.
-
----
-
-## Slide Operations
-
-Slide order is in `ppt/presentation.xml` → `<p:sldIdLst>`.
-
-**Reorder**: Rearrange `<p:sldId>` elements.
-
-**Delete**: Remove `<p:sldId>`, then run `clean.py`.
-
-**Add**: Use `add_slide.py`. Never manually copy slide files—the script handles notes references, Content_Types.xml, and relationship IDs that manual copying misses.
+**템플릿 분석(레이아웃 선택)에만 사용할 것.** 시각적 QA에는 `soffice` + `pdftoppm`으로 고해상도 슬라이드 이미지를 생성한다 — SKILL.md 참고.
 
 ---
 
-## Editing Content
+## 슬라이드 조작
 
-**Subagents:** If available, use them here (after completing step 4). Each slide is a separate XML file, so subagents can edit in parallel. In your prompt to subagents, include:
-- The slide file path(s) to edit
-- **"Use the Edit tool for all changes"**
-- The formatting rules and common pitfalls below
+슬라이드 순서는 `ppt/presentation.xml` → `<p:sldIdLst>`에서 관리한다.
 
-For each slide:
-1. Read the slide's XML
-2. Identify ALL placeholder content—text, images, charts, icons, captions
-3. Replace each placeholder with final content
+**순서 변경**: `<p:sldId>` 요소를 재배열한다.
 
-**Use the Edit tool, not sed or Python scripts.** The Edit tool forces specificity about what to replace and where, yielding better reliability.
+**삭제**: `<p:sldId>`를 제거한 후 `clean.py`를 실행한다.
 
-### Formatting Rules
-
-- **Bold all headers, subheadings, and inline labels**: Use `b="1"` on `<a:rPr>`. This includes:
-  - Slide titles
-  - Section headers within a slide
-  - Inline labels like (e.g.: "Status:", "Description:") at the start of a line
-- **Never use unicode bullets (•)**: Use proper list formatting with `<a:buChar>` or `<a:buAutoNum>`
-- **Bullet consistency**: Let bullets inherit from the layout. Only specify `<a:buChar>` or `<a:buNone>`.
+**추가**: `add_slide.py`를 사용한다. 슬라이드 파일을 직접 복사하지 말 것 — 스크립트가 노트 참조, Content_Types.xml, 관계 ID를 자동으로 처리한다.
 
 ---
 
-## Common Pitfalls
+## 콘텐츠 편집
 
-### Template Adaptation
+**서브에이전트:** 사용 가능하다면 여기서 활용한다 (4단계 완료 후). 각 슬라이드는 별도의 XML 파일이므로 병렬 편집이 가능하다. 서브에이전트 프롬프트에 다음을 포함한다:
+- 편집할 슬라이드 파일 경로
+- **"모든 변경에 Edit 툴을 사용할 것"**
+- 아래의 포맷 규칙 및 주의사항
 
-When source content has fewer items than the template:
-- **Remove excess elements entirely** (images, shapes, text boxes), don't just clear text
-- Check for orphaned visuals after clearing text content
-- Run visual QA to catch mismatched counts
+각 슬라이드별 작업:
+1. 슬라이드 XML 읽기
+2. 모든 플레이스홀더 콘텐츠 식별 — 텍스트, 이미지, 차트, 아이콘, 캡션
+3. 각 플레이스홀더를 최종 콘텐츠로 교체
 
-When replacing text with different length content:
-- **Shorter replacements**: Usually safe
-- **Longer replacements**: May overflow or wrap unexpectedly
-- Test with visual QA after text changes
-- Consider truncating or splitting content to fit the template's design constraints
+**sed나 Python 스크립트가 아닌 Edit 툴을 사용할 것.** Edit 툴은 무엇을 어디서 교체할지 명확히 지정하게 하여 신뢰성이 높다.
 
-**Template slots ≠ Source items**: If template has 4 team members but source has 3 users, delete the 4th member's entire group (image + text boxes), not just the text.
+### 포맷 규칙
 
-### Multi-Item Content
+- **모든 헤더, 소제목, 인라인 레이블은 볼드 처리**: `<a:rPr>`에 `b="1"` 적용. 포함 대상:
+  - 슬라이드 제목
+  - 슬라이드 내 섹션 헤더
+  - 줄 앞의 인라인 레이블 (예: "상태:", "설명:")
+- **유니코드 불릿(•) 사용 금지**: `<a:buChar>` 또는 `<a:buAutoNum>`으로 올바른 목록 포맷 사용
+- **불릿 일관성**: 레이아웃에서 상속받는다. `<a:buChar>` 또는 `<a:buNone>`만 지정한다.
 
-If source has multiple items (numbered lists, multiple sections), create separate `<a:p>` elements for each — **never concatenate into one string**.
+---
 
-**❌ WRONG** — all items in one paragraph:
+## 주요 주의사항
+
+### 템플릿 적용
+
+소스 콘텐츠의 항목이 템플릿보다 적을 때:
+- **초과 요소를 완전히 제거** (이미지, 도형, 텍스트 박스) — 텍스트만 지우지 말 것
+- 텍스트 삭제 후 남은 시각 요소 확인
+- 시각적 QA로 수량 불일치 검토
+
+텍스트를 다른 길이의 콘텐츠로 교체할 때:
+- **짧은 교체**: 대개 안전
+- **긴 교체**: 넘치거나 줄 바꿈이 발생할 수 있음
+- 텍스트 변경 후 시각적 QA로 확인
+- 템플릿 디자인 제약에 맞게 콘텐츠를 줄이거나 분할할 것
+
+**템플릿 슬롯 ≠ 소스 항목 수**: 템플릿에 팀원이 4명인데 소스에 3명이라면, 4번째 팀원의 전체 그룹(이미지 + 텍스트 박스)을 삭제한다 — 텍스트만 지우지 말 것.
+
+### 다중 항목 콘텐츠
+
+소스에 여러 항목(번호 목록, 여러 섹션)이 있으면 각각 별도의 `<a:p>` 요소로 만든다 — **하나의 문자열로 합치지 말 것**.
+
+**❌ 잘못된 예** — 모든 항목을 하나의 단락에:
 ```xml
 <a:p>
-  <a:r><a:rPr .../><a:t>Step 1: Do the first thing. Step 2: Do the second thing.</a:t></a:r>
+  <a:r><a:rPr .../><a:t>1단계: 첫 번째 작업. 2단계: 두 번째 작업.</a:t></a:r>
 </a:p>
 ```
 
-**✅ CORRECT** — separate paragraphs with bold headers:
+**✅ 올바른 예** — 볼드 헤더와 함께 별도 단락으로:
 ```xml
 <a:p>
   <a:pPr algn="l"><a:lnSpc><a:spcPts val="3919"/></a:lnSpc></a:pPr>
-  <a:r><a:rPr lang="en-US" sz="2799" b="1" .../><a:t>Step 1</a:t></a:r>
+  <a:r><a:rPr lang="ko-KR" sz="2799" b="1" .../><a:t>1단계</a:t></a:r>
 </a:p>
 <a:p>
   <a:pPr algn="l"><a:lnSpc><a:spcPts val="3919"/></a:lnSpc></a:pPr>
-  <a:r><a:rPr lang="en-US" sz="2799" .../><a:t>Do the first thing.</a:t></a:r>
+  <a:r><a:rPr lang="ko-KR" sz="2799" .../><a:t>첫 번째 작업.</a:t></a:r>
 </a:p>
 <a:p>
   <a:pPr algn="l"><a:lnSpc><a:spcPts val="3919"/></a:lnSpc></a:pPr>
-  <a:r><a:rPr lang="en-US" sz="2799" b="1" .../><a:t>Step 2</a:t></a:r>
+  <a:r><a:rPr lang="ko-KR" sz="2799" b="1" .../><a:t>2단계</a:t></a:r>
 </a:p>
-<!-- continue pattern -->
+<!-- 패턴 계속 -->
 ```
 
-Copy `<a:pPr>` from the original paragraph to preserve line spacing. Use `b="1"` on headers.
+줄 간격 유지를 위해 원본 단락의 `<a:pPr>`을 복사한다. 헤더에는 `b="1"`을 사용한다.
 
-### Smart Quotes
+### 스마트 따옴표
 
-Handled automatically by unpack/pack. But the Edit tool converts smart quotes to ASCII.
+unpack/pack이 자동으로 처리한다. 단, Edit 툴은 스마트 따옴표를 ASCII로 변환한다.
 
-**When adding new text with quotes, use XML entities:**
+**따옴표가 포함된 새 텍스트를 추가할 때는 XML 엔티티를 사용한다:**
 
 ```xml
-<a:t>the &#x201C;Agreement&#x201D;</a:t>
+<a:t>&#x201C;계약&#x201D;의 내용</a:t>
 ```
 
-| Character | Name | Unicode | XML Entity |
+| 문자 | 이름 | 유니코드 | XML 엔티티 |
 |-----------|------|---------|------------|
-| `“` | Left double quote | U+201C | `&#x201C;` |
-| `”` | Right double quote | U+201D | `&#x201D;` |
-| `‘` | Left single quote | U+2018 | `&#x2018;` |
-| `’` | Right single quote | U+2019 | `&#x2019;` |
+| `"` | 왼쪽 큰따옴표 | U+201C | `&#x201C;` |
+| `"` | 오른쪽 큰따옴표 | U+201D | `&#x201D;` |
+| `'` | 왼쪽 작은따옴표 | U+2018 | `&#x2018;` |
+| `'` | 오른쪽 작은따옴표 | U+2019 | `&#x2019;` |
 
-### Other
+### 기타
 
-- **Whitespace**: Use `xml:space="preserve"` on `<a:t>` with leading/trailing spaces
-- **XML parsing**: Use `defusedxml.minidom`, not `xml.etree.ElementTree` (corrupts namespaces)
+- **공백**: 앞뒤 공백이 있는 `<a:t>`에는 `xml:space="preserve"` 사용
+- **XML 파싱**: `xml.etree.ElementTree` 대신 `defusedxml.minidom` 사용 (네임스페이스 손상 방지)
