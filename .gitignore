@@ -1,5 +1,10 @@
-.DS_Store
-__pycache__/
-.idea/
-.vscode/
+# Ignore local-only folders
+dashboard/
+personas/
 
+# Ignore other common items
+.gemini/
+.idea/
+.vsc/
+.DS_Store
+*.tmp
