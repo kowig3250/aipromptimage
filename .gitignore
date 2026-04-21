@@ -9,6 +9,7 @@ node_modules/
 # Duplicate/backup asset folders
 assets_backup/
 assets_warehouse/
+**/assets_v2/
 
 # Ignore other common items
 .gemini/

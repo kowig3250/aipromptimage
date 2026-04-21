@@ -2,7 +2,7 @@
   "project": "홍프로 프로젝트 (HongPro Project)",
   "version": "1.1",
   "ai_activation_hook": "본 파일은 AI가 보좌진을 쾌속 호출하기 위한 매니페스트입니다. 사용자가 '최실장', '제니' 등을 부르면 즉시 이 파일을 읽고 응답하세요.",
-  "image_base_path": "d:/agent/홍프로 프로젝트/assets",
+  "image_base_path": "d:/agent/홍프로 프로젝트/[00] 자산_창고_(ASSETS)",
   "personas": {
     "c": {
       "name": "최실장 (Chief Choi)",
