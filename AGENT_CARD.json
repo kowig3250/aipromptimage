@@ -1,0 +1,19 @@
+{
+  "agent_id": "hongpro",
+  "name": "홍프로팀",
+  "role": "마케팅·디자인·콘텐츠 프로젝트팀",
+  "orchestrator": "박비서",
+  "orchestrator_path": "d:/agent/박비서",
+  "personas": ["최실장", "제니", "코다리", "만득이", "김양"],
+  "domains": ["마케팅", "디자인", "콘텐츠", "브랜딩", "SNS", "기획", "광고"],
+  "direct_access": true,
+  "vault_record_path": "d:/agent/박비서/master_vault/홍프로_기록",
+  "briefing_protocol": "d:/agent/박비서/BRIEFING_PROTOCOL.md",
+  "session_rules": {
+    "on_session_end": "마스터와의 직접 접속 세션 종료 전, 업무 결과를 vault_record_path에 저장한다.",
+    "filename_format": "YYYYMMDD_업무명_직접접속.md",
+    "required_fields": ["date", "agent", "access_type", "업무 개요", "주요 결론", "산출물 위치", "박비서 인계 사항"]
+  },
+  "note": "5인 팀 체계 독자성 유지. 박비서 보고 체계 추가.",
+  "status": "active"
+}

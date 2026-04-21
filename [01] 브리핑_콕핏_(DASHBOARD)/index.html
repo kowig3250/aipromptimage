@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍프로 프로젝트 - 작전 사령부 대시보드 V3</title>
+    <meta name="description" content="홍프로 프로젝트 AI 팀 작전 사령부 - 최실장, 코다리 부장, 마케터 제니 업무 현황 실시간 대시보드">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cockpit-container">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar-exclusive">
+            <div class="persona-orbit">
+                <div class="persona-sphere">
+                    <img src="assets_v2/choi/choi-salute.png" alt="Active Crew" id="persona-img" class="persona-avatar">
+                    <div class="orbit-ring"></div>
+                </div>
+                <div class="persona-label">
+                    <h2 class="gold-text" id="active-crew-name">최실장</h2>
+                    <span class="active-crew-title" id="active-crew-title">수석 총괄 매니저</span>
+                    <span class="status-indicator" id="active-crew-status">● ACTIVE</span>
+                </div>
+            </div>
+
+            <nav class="nav-exclusive">
+                <div class="nav-item active" data-nav="dashboard">
+                    <span class="icon">🚀</span>
+                    <span>작전 사령부</span>
+                </div>
+
+                <div class="nav-item" data-nav="skills">
+                    <span class="icon">💎</span>
+                    <span>스킬 마켓</span>
+                </div>
+                <div class="nav-item" data-nav="assets">
+                    <span class="icon">📁</span>
+                    <span>산출물 센터</span>
+                </div>
+                <div class="nav-item" data-nav="support">
+                    <span class="icon">✨</span>
+                    <span>대표님 지원</span>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>CONNECT K</p>
+                <small>Premium Assistant</small>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN DASHBOARD ===== -->
+        <main class="main-dashboard">
+
+            <!-- Header -->
+            <header class="executive-header">
+                <div class="greeting">
+                    <h1 id="welcome-msg">대표님, 어서오세요! 💕</h1>
+                    <p id="current-date" class="dim-text"></p>
+                </div>
+                <div class="system-status glass">
+                    <span class="pulse-icon"></span>
+                    System Integrity: 99.9%
+                </div>
+            </header>
+
+            <!-- ===== CREW CALL PANEL (신규) ===== -->
+            <section class="crew-panel">
+                <div class="crew-panel-header">
+                    <span class="panel-label gold-text">CREW STATION</span>
+                    <span class="panel-sub">직원을 호출하여 업무 현황을 확인하세요</span>
+                </div>
+                <div class="crew-cards">
+
+                    <!-- 최실장 -->
+                    <div class="crew-card active" id="card-choi" data-crew="choi" onclick="callCrew('choi')">
+                        <div class="crew-thumb-wrap">
+                            <img src="assets_v2/choi/choi-salute.png" alt="최실장" class="crew-thumb">
+                            <span class="crew-badge badge-active">ACTIVE</span>
+                        </div>
+                        <div class="crew-info">
+                            <h4 class="crew-card-name">최실장</h4>
+                            <p class="crew-card-title">수석 총괄 매니저</p>
+                        </div>
+                        <button class="call-btn" id="btn-choi">호출 ✨</button>
+                    </div>
+
+                    <!-- 코다리 부장 -->
+                    <div class="crew-card" id="card-kodari" data-crew="kodari" onclick="callCrew('kodari')">
+                        <div class="crew-thumb-wrap">
+                            <img src="assets_v2/kodari/kodari-salute.png" alt="코다리 부장" class="crew-thumb">
+                            <span class="crew-badge badge-standby">STANDBY</span>
+                        </div>
+                        <div class="crew-info">
+                            <h4 class="crew-card-name">코다리 부장</h4>
+                            <p class="crew-card-title">정보수집 전문 요원</p>
+                        </div>
+                        <button class="call-btn" id="btn-kodari">호출 🕵️</button>
+                    </div>
+
+                    <!-- 마케터 제니 -->
+                    <div class="crew-card" id="card-jenny" data-crew="jenny" onclick="callCrew('jenny')">
+                        <div class="crew-thumb-wrap">
+                            <img src="assets_v2/jenny/jenny-salute.png" alt="마케터 제니" class="crew-thumb">
+                            <span class="crew-badge badge-working">WORKING</span>
+                        </div>
+                        <div class="crew-info">
+                            <h4 class="crew-card-name">마케터 제니</h4>
+                            <p class="crew-card-title">마케팅 총괄 팀장</p>
+                        </div>
+                        <button class="call-btn" id="btn-jenny">호출 📈</button>
+                    </div>
+                    
+                    <!-- 디자인 실장 김양 -->
+                    <div class="crew-card" id="card-yang" data-crew="yang" onclick="callCrew('yang')">
+                        <div class="crew-thumb-wrap">
+                            <img src="assets_v2/yang/yang-salute.png" alt="디자인 실장 김양" class="crew-thumb">
+                            <span class="crew-badge badge-standby">STANDBY</span>
+                        </div>
+                        <div class="crew-info">
+                            <h4 class="crew-card-name">김양</h4>
+                            <p class="crew-card-title">디자인 실장</p>
+                        </div>
+                        <button class="call-btn" id="btn-yang">호출 🎨</button>
+                    </div>
+
+                    <!-- 만득이 막내 -->
+                    <div class="crew-card" id="card-man" data-crew="man" onclick="callCrew('man')">
+                        <div class="crew-thumb-wrap">
+                            <img src="assets_v2/mandgi/mandgi-salute.png" alt="만득이 막내" class="crew-thumb">
+                            <span class="crew-badge badge-standby">STANDBY</span>
+                        </div>
+                        <div class="crew-info">
+                            <h4 class="crew-card-name">만득이 막내</h4>
+                            <p class="crew-card-title">전속 개발 막내</p>
+                        </div>
+                        <button class="call-btn" id="btn-man">호출 😎</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ===== CONTENT GRID ===== -->
+            <div class="content-grid">
+
+                <!-- Command Center -->
+                <section class="command-card-pro glass">
+                    <div class="card-header">
+                        <span class="category gold-text">INTELLIGENCE</span>
+                        <h3>COMMAND CENTER</h3>
+                    </div>
+                    <div class="response-area">
+                        <p id="briefing-text" class="typing-text">저 최실장이 오늘 대표님을 위해 모든 시스템 점검을 마쳤습니다. 직원을 호출하거나 지시를 내려주세요! ✨</p>
+                    </div>
+                    <div class="input-wrapper-gold">
+                        <input type="text" id="user-input" placeholder="대표님, 지시를 내려주세요..." autocomplete="off" />
+                        <button id="send-btn">EXECUTE ✨</button>
+                    </div>
+                </section>
+
+                <!-- Task Status Panel -->
+                <section class="task-panel glass" id="task-panel">
+                    <div class="card-header">
+                        <span class="category gold-text" id="task-panel-label">MISSION STATUS</span>
+                        <h3 id="task-panel-name">최실장 업무 현황</h3>
+                    </div>
+                    <ul class="task-list" id="task-list">
+                        <!-- Dynamically rendered by app.js -->
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="dashboard-footer">
+                <div class="footer-content">
+                    <span>COPYRIGHT © 2026 CONNECT-K</span>
+                    <span class="separator">|</span>
+                    <span>HONGPRO PROJECT EXECUTIVE MANAGEMENT</span>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
