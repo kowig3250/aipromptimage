@@ -2,6 +2,14 @@
 dashboard/
 personas/
 
+# Node modules
+node_modules/
+**/node_modules/
+
+# Duplicate/backup asset folders
+assets_backup/
+assets_warehouse/
+
 # Ignore other common items
 .gemini/
 .idea/
